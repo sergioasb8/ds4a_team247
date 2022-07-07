@@ -17,8 +17,9 @@ from sklearn.feature_extraction import img_to_graph
 
 # app
 # app instantiation
-app = dash.Dash(external_stylesheets=[dbc.themes.CERULEAN],suppress_callback_exceptions=True)
+app = dash.Dash(__name__,external_stylesheets=[dbc.themes.CERULEAN],suppress_callback_exceptions=True)
 server = app.server
+
 
 #import parts of the app
 from pages import home, overview, dataset, eda, model, report, contact
