@@ -1,5 +1,5 @@
 # import libraries
-from index_app import dash_app
+from app import app
 import plotly
 import plotly.express as px
 import plotly.graph_objects as go
@@ -21,7 +21,7 @@ df = pd.read_csv('pages/data/sentiment_1_0.csv')
 
 def log_reg(text):
     df_rating = df
-    #df_rating=pd.read_csv('dash_app/pages/data/sentiment_1_0.csv')
+    #df_rating=pd.read_csv('app/pages/data/sentiment_1_0.csv')
     # clean the tweet and save it on a new column
 
     def clean_tweet(tweet):
@@ -268,7 +268,7 @@ layout = html.Div([
 ############### Callbacks #################
 
 ############### Generate a random tweet #################
-@dash_app.callback(Output('random_feedback', 'children'),
+@app.callback(Output('random_feedback', 'children'),
               Output('textarea_preprocess', 'value'),
               Input('button_random', 'n_clicks'),)
 
@@ -291,7 +291,7 @@ def gen_random_tweet(nclicks):
 
 ############### Tweet text preprocessing #################
 
-@dash_app.callback(Output('feedback_text_proc', 'children'),
+@app.callback(Output('feedback_text_proc', 'children'),
               Output('display_preprocess_tweet_text_md', 'children'),
               Input('button1', 'n_clicks'),
               State('textarea_preprocess', 'value'))
@@ -367,7 +367,7 @@ def display_preprocees_text(nclicks, text):
 
 ############### Tweet text classification #################
 
-@dash_app.callback(Output('feedback_tw_clas', 'children'),
+@app.callback(Output('feedback_tw_clas', 'children'),
               Output('display_tweet_sentiment_md', 'children'),
               Input('button2', 'n_clicks'),
               State('textarea_preprocess', 'value'))
