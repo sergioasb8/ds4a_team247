@@ -1,5 +1,5 @@
 # import libraries
-from app import dash_app
+from index_app import dash_app
 import dash
 from dash.dash_table import DataTable
 from dash import dcc

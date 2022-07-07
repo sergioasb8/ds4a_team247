@@ -4,7 +4,7 @@ from dash import dcc
 from dash import html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
-from app import dash_app
+from index_app import dash_app
 import plotly
 import plotly.express as px
 import plotly.graph_objects as go

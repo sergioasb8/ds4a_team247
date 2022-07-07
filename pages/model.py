@@ -1,5 +1,5 @@
 # import libraries
-from app import dash_app
+from index_app import dash_app
 import plotly
 import plotly.express as px
 import plotly.graph_objects as go

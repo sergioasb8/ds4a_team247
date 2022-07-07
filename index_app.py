@@ -1,4 +1,4 @@
-from app import dash_app
+# from app import dash_app
 from turtle import width
 import dash
 from dash import dcc
@@ -8,6 +8,17 @@ from dash.dependencies import Input, Output
 from matplotlib import image
 from sklearn.feature_extraction import img_to_graph
 
+# app
+#import dash
+#from dash import dcc
+#from dash import html
+#import dash_bootstrap_components as dbc
+#from dash.dependencies import Input, Output
+
+# app
+# app instantiation
+dash_app = dash.Dash(external_stylesheets=[dbc.themes.CERULEAN],suppress_callback_exceptions=True)
+server = dash_app.server
 
 #import parts of the app
 from pages import home, overview, dataset, eda, model, report, contact
